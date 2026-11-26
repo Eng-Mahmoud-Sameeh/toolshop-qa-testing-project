@@ -20,3 +20,14 @@ Language	Everyone	Switch between DE, EL, EN, ES, FR, NL, TR	Is every page transl
 Chat assistant	Everyone	Buttons: Find a product, Order a product, Checkout, Create support ticket	Can it create a real ticket?
 Live shop activity	Everyone	Panel showing recent sales from other users	Is this real data or fake?
 General	Everyone	—	Browser tab says "v5.0" but the footer says "v2.5". Which version is it?
+| My account | Customer | Overview page with links to Favorites, Profile, Invoices, Messages | — |
+| Favorites | Customer | See saved products; empty list shows a helpful message | Can I remove a favourite from this page? |
+| Profile | Customer | Edit name, email, phone, address; change password (same rules + strength bar) | What happens if I change my email — do I stay logged in? |
+| Two-factor authentication (2FA) | Customer | Set up 2FA with an authenticator app (QR code or secret key), then verify a code | Can I turn it off again? What if I lose my phone? |
+| Invoices | Customer | List of orders (number, address, date, total); Details page; Download PDF | Empty list shows only column headings, no message. Date is in UTC (20:54 shown, 22:54 Cairo time). |
+| Messages | Customer | See messages I sent through the contact form | Can the shop reply? Do I see replies here? |
+| Out-of-stock product | Guest, customer | "Out of stock" label; Add to cart button is disabled | Add to favourites still works — on purpose? |
+| Billing address (checkout step 3) | Guest, customer | Address pre-filled from profile; postcode lookup fills street/city/state | Lookup filled City "Gulgowskiville", State "New Jersey" for Egypt. Can I change the address for one order only? |
+| Payment (checkout step 4) | Guest, customer | Choose Bank Transfer, Cash on Delivery, Credit Card, Buy Now Pay Later, or Gift Card; "Check payment" then "Confirm" | "Payment was successful" appears before I press Confirm. What fields does each method need? |
+| Order confirmation | Guest, customer | Message "Thanks for your order! Your invoice number is INV-…"; cart is emptied | Is an email sent? |
+| Product links | Everyone | Each product has its own address (/product/ID) | After the site restarted, IDs changed; old links show an empty page with no "not found" message. |
