@@ -33,3 +33,13 @@
 | Payment (checkout step 4) | Guest, customer | Choose Bank Transfer, Cash on Delivery, Credit Card, Buy Now Pay Later, or Gift Card; "Check payment" then "Confirm" | "Payment was successful" appears before I press Confirm. What fields does each method need? |
 | Order confirmation | Guest, customer | Message "Thanks for your order! Your invoice number is INV-…"; cart is emptied | Is an email sent? |
 | Product links | Everyone | Each product has its own address (/product/ID) | After the site restarted, IDs changed; old links show an empty page with no "not found" message. |
+| Admin dashboard | Admin | "Sales over the years" chart; latest orders with status and Edit link | Invoice numbers have different lengths (INV-2026000008 vs INV-20260000041). |
+| Brands | Admin | List, search, add, edit, delete brands | Full of junk data from other testers ("...editado"). Can I delete a brand that has products? |
+| Categories | Admin | List, search, add, edit, delete categories; categories have a parent (e.g. Pliers → Hand Tools) | Can I delete a parent category that has children? |
+| Products | Admin | List (name, stock, price), search, add, edit, delete; form: name, description, stock, price, location offer, item for rent, CO₂ rating, brand, category, image | Negative stock or price? Stock went 25 → 21 after orders. |
+| Orders | Admin | See order details; change status: AWAITING_FULFILLMENT → ON_HOLD → AWAITING_SHIPMENT → SHIPPED → COMPLETED | Can status go backwards (SHIPPED → AWAITING)? Does the customer see the new status? |
+| Users | Admin | List, search, add, edit, delete users | Public admin can see and delete every user, including real emails. |
+| Admin messages | Admin | See messages from the contact form (name, subject, status, date) | Can the admin reply? Does the status change after reading? |
+| Settings | Admin | Payment endpoint; geolocation discounts (New York, Mumbai, Tokyo, Amsterdam, London); show/hide CO₂ features; eco badge; Clear storage | Do settings affect all users or only this browser? |
+| Statistics report | Admin | Top 10 categories, top 10 products, customers by country, sales per country | "Customers By Country" mixes formats: "Austria", "US", "RO", and a country called "Country". |
+| Average sales reports | Admin | Average sales per month and per week, by year | Years shown 2018–2025; 2026 is missing although there are 2026 orders. |
