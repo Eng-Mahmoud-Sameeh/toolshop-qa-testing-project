@@ -41,6 +41,13 @@ public class TestListener implements ITestListener {
             return;
         }
         try {
+            // Print what the browser actually shows, so CI logs explain the failure without a screenshot.
+            org.openqa.selenium.WebDriver d = DriverFactory.getDriver();
+            String bodyText = d.findElement(org.openqa.selenium.By.tagName("body")).getText().replaceAll("\\s+", " ");
+            System.out.println("    page title: " + d.getTitle());
+            System.out.println("    page url  : " + d.getCurrentUrl());
+            System.out.println("    page text : " + bodyText.substring(0, Math.min(300, bodyText.length())));
+
             byte[] png = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.BYTES);
             Allure.addAttachment("Screenshot on failure", "image/png", new ByteArrayInputStream(png), "png");
             Allure.addAttachment("URL on failure", DriverFactory.getDriver().getCurrentUrl());
