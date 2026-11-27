@@ -25,3 +25,6 @@ allure-report/
 reports/
 newman/
 ~$*.xlsx
+
+# Personal study notes (kept on this PC only)
+docs/

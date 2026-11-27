@@ -44,8 +44,7 @@ Java 21 · Selenium WebDriver 4 · TestNG · Maven · Page Object Model · RestA
 │   ├── config.properties                # base URL, browser, headless, timeouts
 │   ├── testng.xml / testng-smoke.xml    # full regression suite / smoke suite
 │   └── testdata/*.csv                   # data for data-driven tests
-├── .github/workflows/tests.yml          # Phase 6: CI pipeline
-└── docs/                                # learning guide, interview Q&A, CV bullets
+└── .github/workflows/tests.yml          # Phase 6: CI pipeline
 ```
 
 ## How to run
