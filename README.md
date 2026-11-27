@@ -17,7 +17,7 @@ It covers the full testing life cycle: exploration, test planning, manual testin
 | Bug reporting | Bugs on the main site and on the planted-bugs site | **12 bugs** (1 High, 8 Medium, 3 Low) |
 | API testing | Postman collection with environments, variables, token handling | **23 requests, 77 assertions** |
 | UI automation | Java + Selenium + TestNG, Page Object Model | **32 test methods → 43 test runs**, 9 page objects · **43/43 passed** (local run, 27 Nov 2026) |
-| CI/CD | GitHub Actions runs API and UI tests on every push | 2 parallel jobs, reports as artifacts |
+| CI/CD | GitHub Actions on every push: API tests + UI framework build | 2 parallel jobs, HTML report as artifact |
 
 ## Tech stack
 
@@ -97,12 +97,18 @@ All 12 bug reports, with steps, expected and actual results: `toolshop-test-case
 
 `.github/workflows/tests.yml` runs on every push to `main`, on every pull request and on demand:
 
-1. **API tests:** installs Newman, runs the collection, uploads an HTML report.
-2. **UI tests:** installs Java 21, runs the TestNG suite in headless Chrome, builds the Allure report, uploads it, and uploads screenshots of failed tests.
+1. **API tests:** installs Newman, runs the whole Postman collection against the live API, uploads an HTML report.
+2. **UI framework build:** installs Java 21 and compiles the Selenium framework and all UI tests.
+
+**Why the UI suite runs locally and not in CI:** the demo site is protected by Cloudflare. When the suite ran on GitHub's servers,
+every page showed *"Just a moment… Performing security verification"* instead of the shop (the framework printed this in the CI log).
+Bypassing a site's bot protection is not acceptable, so the UI suite runs on a local machine (`mvn test`, 43/43 passed) and CI covers what it can.
+With a self-hosted runner (a company machine that the site trusts), the same `mvn test -Dheadless=true` step would run the UI suite in CI unchanged.
 
 Reports are under **Actions → latest run → Artifacts**.
 
 ## Known limitations
 
 * The application is a **shared public demo**. Other users change data, and the site is sometimes reset or briefly unavailable. Some failures can be caused by the environment, not by the product (see *Risks* in the test plan).
+* The UI suite cannot run on GitHub-hosted CI machines because of Cloudflare bot protection (see CI/CD above).
 * Performance, security, "Sign in with Google", mobile browsers and languages other than English are **out of scope** (reasons in the test plan).
