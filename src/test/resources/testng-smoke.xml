@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--
+  Smoke suite: only the most important tests (group "smoke"), about 10 runs.
+  Run:  mvn test -Dsuite=testng-smoke.xml
+-->
+<suite name="Toolshop UI Smoke" verbose="1">
+    <listeners>
+        <listener class-name="com.toolshop.listeners.TestListener"/>
+        <listener class-name="com.toolshop.listeners.RetryTransformer"/>
+    </listeners>
+    <test name="Smoke">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.toolshop.tests"/>
+        </packages>
+    </test>
+</suite>

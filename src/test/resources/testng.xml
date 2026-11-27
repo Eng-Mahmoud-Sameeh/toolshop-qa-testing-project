@@ -1,0 +1,37 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--
+  Full regression suite: every UI test.
+  Run:  mvn test                 (uses this file by default, see pom.xml)
+  Tests run one at a time to be gentle with the shared public demo site.
+-->
+<suite name="Toolshop UI Regression" verbose="1">
+    <listeners>
+        <listener class-name="com.toolshop.listeners.TestListener"/>
+        <listener class-name="com.toolshop.listeners.RetryTransformer"/>
+    </listeners>
+
+    <test name="Login and Register">
+        <classes>
+            <class name="com.toolshop.tests.LoginTests"/>
+            <class name="com.toolshop.tests.RegisterTests"/>
+        </classes>
+    </test>
+    <test name="Search, Sort and Filter">
+        <classes>
+            <class name="com.toolshop.tests.SearchTests"/>
+            <class name="com.toolshop.tests.SortFilterTests"/>
+        </classes>
+    </test>
+    <test name="Product and Cart">
+        <classes>
+            <class name="com.toolshop.tests.ProductTests"/>
+            <class name="com.toolshop.tests.CartTests"/>
+        </classes>
+    </test>
+    <test name="Checkout and Access">
+        <classes>
+            <class name="com.toolshop.tests.CheckoutTests"/>
+            <class name="com.toolshop.tests.AccessTests"/>
+        </classes>
+    </test>
+</suite>

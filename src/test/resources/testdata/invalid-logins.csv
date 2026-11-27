@@ -1,0 +1,4 @@
+caseName,email,password
+wrong password,EXISTING,Wrong#Pass123
+unregistered email,nobody.%s@example.com,Toolshop#2026
+invalid email format,not-an-email,Toolshop#2026

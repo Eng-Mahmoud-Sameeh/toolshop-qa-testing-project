@@ -15,3 +15,13 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# --- added for the automation project ---
+.idea/
+*.iml
+.vscode/
+allure-results/
+allure-report/
+reports/
+newman/
+~$*.xlsx
