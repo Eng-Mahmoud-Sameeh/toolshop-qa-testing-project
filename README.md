@@ -1,7 +1,5 @@
 # Toolshop QA Testing Project
 
-[![Tests](https://github.com/Eng-Mahmoud-Sameeh/toolshop-qa-testing-project/actions/workflows/tests.yml/badge.svg)](https://github.com/Eng-Mahmoud-Sameeh/toolshop-qa-testing-project/actions/workflows/tests.yml)
-
 End-to-end QA project for **[Practice Software Testing – Toolshop](https://practicesoftwaretesting.com)**, a demo online shop for tools.
 It covers the full testing life cycle: exploration, test planning, manual testing, bug reporting, API testing, UI automation and CI/CD.
 
